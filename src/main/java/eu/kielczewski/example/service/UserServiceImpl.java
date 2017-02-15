@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User save(@NotNull @Valid final User user) {
+    public User save(final User user) {
         LOGGER.debug("Creating {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {
